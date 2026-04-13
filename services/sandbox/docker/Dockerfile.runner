@@ -1,0 +1,23 @@
+FROM node:20-alpine
+
+# Create non-root user
+RUN addgroup -g 1001 -S sandbox && \
+    adduser -S sandbox -u 1001
+
+# Set working directory
+WORKDIR /sandbox
+
+# Copy runner script
+COPY runner.js .
+
+# Change ownership
+RUN chown -R sandbox:sandbox /sandbox
+
+# Switch to non-root user
+USER sandbox
+
+# Disable network by default at runtime
+# (Docker daemon will apply network restrictions)
+
+# Entry point: execute runner script
+CMD ["node", "runner.js"]

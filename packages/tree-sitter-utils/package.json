@@ -1,0 +1,20 @@
+{
+  "name": "@devlens/tree-sitter-utils",
+  "version": "1.0.0",
+  "description": "Tree-sitter utilities for AST parsing and analysis",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "web-tree-sitter": "^0.20.8"
+  },
+  "devDependencies": {
+    "@devlens/tsconfig": "workspace:*",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0"
+  }
+}

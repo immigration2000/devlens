@@ -1,0 +1,14 @@
+{
+  "slug": "kanban-board",
+  "title": "칸반 보드 만들기",
+  "description": "JavaScript를 사용하여 드래그 앤 드롭 칸반 보드를 만드세요.\n\n## 요구사항\n- 3개 컬럼: 할 일(To Do), 진행 중(In Progress), 완료(Done)\n- 새 카드 추가 기능 (제목 입력)\n- 카드 삭제 버튼\n- 카드를 다른 컬럼으로 드래그 앤 드롭\n- 각 컬럼의 카드 수 표시\n- 카드에 생성 시간 표시\n- 초기 예제 카드 3개 포함",
+  "difficulty": 3,
+  "time_limit_min": 60,
+  "tags": ["DOM", "드래그앤드롭", "이벤트", "배열"],
+  "test_cases": [
+    { "id": "tc-001", "description": "3개 컬럼이 표시되는지 확인", "type": "unit" },
+    { "id": "tc-002", "description": "새 카드 추가가 동작하는지 확인", "type": "unit" },
+    { "id": "tc-003", "description": "카드 삭제가 동작하는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "드래그 앤 드롭으로 카드 이동이 되는지 확인", "type": "unit" }
+  ]
+}

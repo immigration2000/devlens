@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; min-height: 100vh; padding: 1.5rem; color: white; }
+  h1 { font-size: 1.3rem; margin-bottom: 1rem; text-align: center; color: #94a3b8; }
+  .add-bar { display: flex; gap: 8px; max-width: 400px; margin: 0 auto 1.5rem; }
+  #new-card-input { flex: 1; padding: 8px 14px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: white; font-size: 0.9rem; outline: none; }
+  #new-card-input:focus { border-color: #3b82f6; }
+  #add-card-btn { padding: 8px 18px; background: #3b82f6; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+  .board { display: flex; gap: 16px; justify-content: center; }
+  .kanban-column { background: #1e293b; border-radius: 12px; width: 260px; padding: 12px; min-height: 400px; display: flex; flex-direction: column; }
+  .column-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding: 0 4px; }
+  .column-header h2 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .column-header .count { background: #334155; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; color: #94a3b8; }
+  #todo .column-header h2 { color: #f59e0b; }
+  #in-progress .column-header h2 { color: #3b82f6; }
+  #done .column-header h2 { color: #22c55e; }
+  .card-list { flex: 1; display: flex; flex-direction: column; gap: 8px; min-height: 50px; padding: 4px; border-radius: 8px; transition: background 0.2s; }
+  .card-list.drag-over { background: rgba(59,130,246,0.1); border: 1px dashed #3b82f6; }
+  .kanban-card { background: #334155; border-radius: 8px; padding: 10px 12px; cursor: grab; transition: transform 0.15s, opacity 0.15s; }
+  .kanban-card:hover { transform: translateY(-1px); }
+  .kanban-card.dragging { opacity: 0.4; }
+  .kanban-card .card-title { font-size: 0.85rem; margin-bottom: 6px; color: #e2e8f0; }
+  .kanban-card .card-meta { display: flex; justify-content: space-between; align-items: center; }
+  .kanban-card .card-time { font-size: 0.7rem; color: #64748b; }
+  .kanban-card .delete-btn { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.8rem; padding: 2px 4px; }
+  .kanban-card .delete-btn:hover { color: #ef4444; }
+</style>
+</head>
+<body>
+  <h1>Kanban Board</h1>
+  <div class="add-bar">
+    <input type="text" id="new-card-input" placeholder="새 카드 제목을 입력하세요...">
+    <button id="add-card-btn">+ Add</button>
+  </div>
+  <div class="board">
+    <div class="kanban-column" id="todo">
+      <div class="column-header"><h2>To Do</h2><span class="count">0</span></div>
+      <div class="card-list"></div>
+    </div>
+    <div class="kanban-column" id="in-progress">
+      <div class="column-header"><h2>In Progress</h2><span class="count">0</span></div>
+      <div class="card-list"></div>
+    </div>
+    <div class="kanban-column" id="done">
+      <div class="column-header"><h2>Done</h2><span class="count">0</span></div>
+      <div class="card-list"></div>
+    </div>
+  </div>
+</body>
+</html>

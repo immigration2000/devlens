@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #0f172a; color: white; }
+  .game-container { display: flex; gap: 20px; align-items: flex-start; }
+  .main-board { position: relative; }
+  #game-canvas { border: 2px solid #334155; border-radius: 4px; }
+  .side-panel { width: 140px; }
+  .panel-box { background: #1e293b; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+  .panel-box h3 { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .panel-box .value { font-size: 1.5rem; font-weight: 700; }
+  #next-canvas { display: block; margin: 0 auto; }
+  #start-btn { width: 100%; padding: 10px; background: #3b82f6; border: none; border-radius: 8px; color: white; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+  #start-btn:hover { background: #2563eb; }
+  .controls { font-size: 0.7rem; color: #475569; margin-top: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="game-container">
+    <div class="main-board">
+      <canvas id="game-canvas"></canvas>
+    </div>
+    <div class="side-panel">
+      <div class="panel-box"><h3>Score</h3><div class="value" id="score">0</div></div>
+      <div class="panel-box"><h3>Level</h3><div class="value" id="level">1</div></div>
+      <div class="panel-box"><h3>Lines</h3><div class="value" id="lines">0</div></div>
+      <div class="panel-box"><h3>Next</h3><canvas id="next-canvas"></canvas></div>
+      <button id="start-btn">Start Game</button>
+      <div class="controls">
+        Arrow Keys: Move<br>
+        Up: Rotate<br>
+        Down: Drop faster
+      </div>
+    </div>
+  </div>
+</body>
+</html>

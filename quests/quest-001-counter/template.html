@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f8f9fa; }
+  #app { text-align: center; padding: 2rem; }
+  h1 { font-size: 1.5rem; margin-bottom: 1rem; color: #333; }
+  #counter-display { font-size: 4rem; font-weight: bold; margin: 1.5rem 0; color: #111; transition: color 0.2s; }
+  .btn-group { display: flex; gap: 12px; justify-content: center; }
+  button { padding: 12px 28px; font-size: 1.1rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: transform 0.1s, background 0.2s; }
+  button:active { transform: scale(0.95); }
+  #btn-increase { background: #3b82f6; color: white; }
+  #btn-increase:hover { background: #2563eb; }
+  #btn-decrease { background: #ef4444; color: white; }
+  #btn-decrease:hover { background: #dc2626; }
+  #btn-reset { background: #6b7280; color: white; }
+  #btn-reset:hover { background: #4b5563; }
+</style>
+</head>
+<body>
+  <div id="app">
+    <h1>카운터</h1>
+    <div id="counter-display">0</div>
+    <div class="btn-group">
+      <button id="btn-increase">+</button>
+      <button id="btn-decrease">-</button>
+      <button id="btn-reset">Reset</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "slug": "color-picker",
+  "title": "색상 피커 만들기",
+  "description": "HTML/CSS/JavaScript를 사용하여 색상 선택 도구를 만드세요.\n\n## 요구사항\n- RGB 슬라이더 3개 (R, G, B 각각 0~255)\n- 슬라이더 조작 시 실시간 색상 미리보기 영역 업데이트\n- HEX 코드 표시 (#RRGGBB 형식)\n- RGB 값 표시 (rgb(r, g, b) 형식)\n- HEX 코드 복사 버튼\n- 최근 선택한 색상 5개 히스토리 표시\n- 히스토리 색상 클릭 시 해당 색상으로 복원",
+  "difficulty": 1,
+  "time_limit_min": 30,
+  "tags": ["DOM", "이벤트", "CSS", "기초"],
+  "test_cases": [
+    { "id": "tc-001", "description": "슬라이더 변경 시 미리보기 색상이 업데이트되는지 확인", "type": "visual" },
+    { "id": "tc-002", "description": "HEX 코드가 올바르게 표시되는지 확인", "type": "unit" },
+    { "id": "tc-003", "description": "복사 버튼이 동작하는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "색상 히스토리가 추가되는지 확인", "type": "unit" }
+  ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f0f2f5; }
+  .container { background: white; border-radius: 16px; padding: 28px; width: 360px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  h1 { font-size: 1.2rem; color: #333; margin-bottom: 1rem; text-align: center; }
+  #color-preview { width: 100%; height: 120px; border-radius: 12px; background: #3b82f6; margin-bottom: 1rem; transition: background 0.15s; }
+  .values { display: flex; justify-content: center; gap: 12px; margin-bottom: 1.2rem; }
+  #hex-value { font-family: 'Fira Code', monospace; font-size: 1.2rem; font-weight: 700; color: #333; }
+  #rgb-value { font-family: 'Fira Code', monospace; font-size: 0.8rem; color: #888; }
+  #copy-btn { padding: 4px 14px; background: #e5e7eb; border: none; border-radius: 6px; font-size: 0.8rem; cursor: pointer; color: #555; }
+  #copy-btn:hover { background: #d1d5db; }
+  .slider-group { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .slider-group label { width: 18px; font-weight: 700; font-size: 0.9rem; }
+  .slider-group label.r { color: #ef4444; }
+  .slider-group label.g { color: #22c55e; }
+  .slider-group label.b { color: #3b82f6; }
+  .slider-group input[type="range"] { flex: 1; }
+  .slider-group .val { width: 32px; text-align: right; font-family: 'Fira Code', monospace; font-size: 0.8rem; color: #666; }
+  .history-label { font-size: 0.8rem; color: #999; margin: 1rem 0 0.5rem; }
+  #color-history { display: flex; gap: 8px; min-height: 36px; }
+  #color-history .swatch { width: 36px; height: 36px; border-radius: 50%; cursor: pointer; border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.15); transition: transform 0.15s; }
+  #color-history .swatch:hover { transform: scale(1.15); }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Color Picker</h1>
+    <div id="color-preview"></div>
+    <div class="values">
+      <span id="hex-value">#3B82F6</span>
+      <span id="rgb-value">rgb(59, 130, 246)</span>
+      <button id="copy-btn">Copy</button>
+    </div>
+    <div class="slider-group"><label class="r">R</label><input type="range" id="r-slider" min="0" max="255" value="59"><span class="val" id="r-value">59</span></div>
+    <div class="slider-group"><label class="g">G</label><input type="range" id="g-slider" min="0" max="255" value="130"><span class="val" id="g-value">130</span></div>
+    <div class="slider-group"><label class="b">B</label><input type="range" id="b-slider" min="0" max="255" value="246"><span class="val" id="b-value">246</span></div>
+    <div class="history-label">Recent Colors</div>
+    <div id="color-history"></div>
+  </div>
+</body>
+</html>

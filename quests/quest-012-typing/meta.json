@@ -1,0 +1,14 @@
+{
+  "slug": "typing-game",
+  "title": "타이핑 연습 게임 만들기",
+  "description": "JavaScript를 사용하여 타이핑 속도를 측정하는 게임을 만드세요.\n\n## 요구사항\n- 랜덤 문장이 화면에 표시됨\n- 사용자가 입력 필드에 문장을 따라 타이핑\n- 실시간으로 맞은 글자는 초록색, 틀린 글자는 빨간색으로 표시\n- 타이핑 완료 시 WPM(분당 단어 수) 계산\n- 정확도(%) 표시\n- '다시 시작' 버튼으로 새로운 문장\n- 타이핑 시작 시 타이머 자동 시작",
+  "difficulty": 2,
+  "time_limit_min": 45,
+  "tags": ["DOM", "이벤트", "타이머", "문자열"],
+  "test_cases": [
+    { "id": "tc-001", "description": "초기 화면에 문장이 표시되는지 확인", "type": "unit" },
+    { "id": "tc-002", "description": "타이핑 시 글자 색상이 변경되는지 확인", "type": "visual" },
+    { "id": "tc-003", "description": "완료 시 WPM과 정확도가 표시되는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "다시 시작 버튼이 동작하는지 확인", "type": "unit" }
+  ]
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #0f172a; color: white; }
+  #app { text-align: center; }
+  h1 { font-size: 1.3rem; margin-bottom: 1.5rem; color: #94a3b8; }
+  #time-display { font-size: 4rem; font-weight: 200; font-family: 'Fira Code', monospace; margin-bottom: 1.5rem; letter-spacing: 2px; }
+  .btn-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 1.5rem; }
+  button { padding: 10px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: transform 0.1s; }
+  button:active { transform: scale(0.95); }
+  #start-stop-btn { background: #22c55e; color: white; min-width: 80px; }
+  #lap-btn { background: #3b82f6; color: white; }
+  #reset-btn { background: #6b7280; color: white; }
+  #laps-list { list-style: none; max-height: 200px; overflow-y: auto; text-align: left; padding: 0 1rem; }
+  #laps-list li { padding: 6px 0; border-bottom: 1px solid #1e293b; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: #94a3b8; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <div id="app">
+    <h1>Stopwatch</h1>
+    <div id="time-display">00:00.000</div>
+    <div class="btn-group">
+      <button id="start-stop-btn">Start</button>
+      <button id="lap-btn">Lap</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    <ul id="laps-list"></ul>
+  </div>
+</body>
+</html>

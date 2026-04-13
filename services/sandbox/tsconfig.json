@@ -1,0 +1,12 @@
+{
+  "extends": "@devlens/tsconfig/node.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmitOnError": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

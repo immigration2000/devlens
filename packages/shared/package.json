@@ -1,0 +1,38 @@
+{
+  "name": "@devlens/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types/index.js",
+    "./constants": "./dist/constants/index.js",
+    "./schemas": "./dist/schemas/index.js",
+    "./utils": "./dist/utils/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "zod": "^3.23.0",
+    "pino": "^8.17.2",
+    "pino-pretty": "^10.3.1"
+  },
+  "devDependencies": {
+    "@devlens/tsconfig": "workspace:*",
+    "typescript": "^5.6.0",
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0"
+  }
+}

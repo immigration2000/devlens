@@ -1,0 +1,35 @@
+{
+  "slug": "snake-game",
+  "title": "뱀 게임 만들기",
+  "description": "Canvas를 사용하여 클래식 뱀 게임을 만드세요.\n\n## 요구사항\n- 게임판은 20x20 그리드\n- 뱀은 초기 길이 3\n- 키보드로 뱀 방향 제어 (화살표 또는 WASD)\n- 음식 먹으면 길이 증가\n- 벽에 닿거나 자기몸에 닿으면 게임 오버\n- 점수 표시 (먹은 음식 개수 * 10)\n- 게임 시작/일시정지 기능\n- FPS: 10 (100ms 주기)",
+  "difficulty": 3,
+  "time_limit_min": 60,
+  "tags": ["Canvas", "게임루프", "키보드"],
+  "test_cases": [
+    {
+      "id": "tc-001",
+      "description": "게임 시작 시 뱀이 화면 중앙에 나타나는지 확인",
+      "type": "visual"
+    },
+    {
+      "id": "tc-002",
+      "description": "키보드 입력으로 뱀이 방향 변경하는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-003",
+      "description": "뱀이 음식에 닿으면 길이가 증가하고 점수가 올라가는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-004",
+      "description": "뱀이 벽에 닿으면 게임 오버가 되는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-005",
+      "description": "뱀이 자기 몸에 닿으면 게임 오버가 되는지 확인",
+      "type": "unit"
+    }
+  ]
+}

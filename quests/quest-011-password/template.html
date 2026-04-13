@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #1e293b; }
+  .container { background: #334155; border-radius: 16px; padding: 28px; width: 380px; color: white; }
+  h1 { font-size: 1.2rem; margin-bottom: 1.2rem; text-align: center; color: #94a3b8; }
+  .password-box { display: flex; gap: 8px; margin-bottom: 1.2rem; }
+  #password-display { flex: 1; padding: 12px; background: #0f172a; border: none; border-radius: 8px; color: #22c55e; font-family: 'Fira Code', monospace; font-size: 1.1rem; letter-spacing: 1px; outline: none; }
+  #copy-btn { padding: 12px 16px; background: #3b82f6; border: none; border-radius: 8px; color: white; cursor: pointer; font-size: 0.9rem; }
+  #copy-btn:hover { background: #2563eb; }
+  .option-group { margin-bottom: 1rem; }
+  .option-group label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; font-size: 0.9rem; cursor: pointer; }
+  .option-group input[type="checkbox"] { width: 18px; height: 18px; }
+  .slider-group { margin-bottom: 1.2rem; }
+  .slider-group .header { display: flex; justify-content: space-between; margin-bottom: 6px; color: #94a3b8; font-size: 0.85rem; }
+  #length-slider { width: 100%; }
+  .strength { margin-bottom: 1.2rem; }
+  .strength-bar-bg { height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; }
+  #strength-bar { height: 100%; width: 0%; background: #ef4444; border-radius: 3px; transition: width 0.3s, background 0.3s; }
+  #strength-text { font-size: 0.8rem; color: #94a3b8; margin-top: 4px; }
+  #generate-btn { width: 100%; padding: 12px; background: #22c55e; border: none; border-radius: 8px; color: white; font-size: 1rem; font-weight: 600; cursor: pointer; }
+  #generate-btn:hover { background: #16a34a; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Password Generator</h1>
+    <div class="password-box">
+      <input type="text" id="password-display" readonly placeholder="Click Generate">
+      <button id="copy-btn">Copy</button>
+    </div>
+    <div class="slider-group">
+      <div class="header"><span>Length</span><span id="length-value">12</span></div>
+      <input type="range" id="length-slider" min="8" max="32" value="12">
+    </div>
+    <div class="option-group">
+      <label><input type="checkbox" id="uppercase" checked> Uppercase (A-Z)</label>
+      <label><input type="checkbox" id="lowercase" checked> Lowercase (a-z)</label>
+      <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+      <label><input type="checkbox" id="symbols"> Symbols (!@#$)</label>
+    </div>
+    <div class="strength">
+      <div class="strength-bar-bg"><div id="strength-bar"></div></div>
+      <div id="strength-text"></div>
+    </div>
+    <button id="generate-btn">Generate Password</button>
+  </div>
+</body>
+</html>

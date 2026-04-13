@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #1e293b; }
+  .calculator { background: #334155; border-radius: 16px; padding: 20px; width: 280px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+  #display { width: 100%; padding: 16px; font-size: 2rem; text-align: right; background: #0f172a; color: white; border: none; border-radius: 10px; margin-bottom: 12px; font-family: 'Fira Code', monospace; }
+  .btn-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  button { padding: 16px; font-size: 1.2rem; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; transition: transform 0.1s; }
+  button:active { transform: scale(0.93); }
+  .number-btn { background: #475569; color: white; }
+  .number-btn:hover { background: #64748b; }
+  .operator-btn { background: #f59e0b; color: white; }
+  .operator-btn:hover { background: #d97706; }
+  #equals { background: #3b82f6; color: white; }
+  #equals:hover { background: #2563eb; }
+  #clear { background: #ef4444; color: white; }
+  #clear:hover { background: #dc2626; }
+</style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" readonly value="0">
+    <div class="btn-grid">
+      <button id="clear">C</button>
+      <button class="operator-btn">(</button>
+      <button class="operator-btn">)</button>
+      <button class="operator-btn">/</button>
+      <button class="number-btn">7</button>
+      <button class="number-btn">8</button>
+      <button class="number-btn">9</button>
+      <button class="operator-btn">*</button>
+      <button class="number-btn">4</button>
+      <button class="number-btn">5</button>
+      <button class="number-btn">6</button>
+      <button class="operator-btn">-</button>
+      <button class="number-btn">1</button>
+      <button class="number-btn">2</button>
+      <button class="number-btn">3</button>
+      <button class="operator-btn">+</button>
+      <button class="number-btn" style="grid-column: span 2">0</button>
+      <button class="number-btn">.</button>
+      <button id="equals">=</button>
+    </div>
+  </div>
+</body>
+</html>

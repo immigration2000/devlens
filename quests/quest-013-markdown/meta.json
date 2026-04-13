@@ -1,0 +1,14 @@
+{
+  "slug": "markdown-viewer",
+  "title": "마크다운 뷰어 만들기",
+  "description": "JavaScript를 사용하여 실시간 마크다운 미리보기 뷰어를 만드세요.\n\n## 요구사항\n- 왼쪽: 마크다운 입력 영역 (textarea)\n- 오른쪽: 변환된 HTML 미리보기 영역\n- 실시간 변환 (입력 즉시 미리보기 업데이트)\n- 지원 문법: # 제목 (h1~h3), **굵게**, *기울임*, `코드`, - 목록, > 인용, --- 구분선, [링크](url)\n- 초기 예제 마크다운 텍스트 표시",
+  "difficulty": 2,
+  "time_limit_min": 45,
+  "tags": ["DOM", "정규식", "문자열"],
+  "test_cases": [
+    { "id": "tc-001", "description": "# 제목이 <h1>으로 변환되는지 확인", "type": "unit" },
+    { "id": "tc-002", "description": "**굵게**가 <strong>으로 변환되는지 확인", "type": "unit" },
+    { "id": "tc-003", "description": "실시간으로 미리보기가 업데이트되는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "- 목록이 <ul><li>로 변환되는지 확인", "type": "unit" }
+  ]
+}

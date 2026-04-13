@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; height: 100vh; display: flex; flex-direction: column; background: #f8f9fa; }
+  .header { padding: 12px 20px; background: #1e293b; color: white; font-size: 0.9rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+  .header span { color: #94a3b8; font-size: 0.8rem; }
+  .editor-container { flex: 1; display: flex; overflow: hidden; }
+  .pane { flex: 1; display: flex; flex-direction: column; }
+  .pane-header { padding: 8px 16px; background: #e5e7eb; font-size: 0.75rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; }
+  #md-editor { flex: 1; padding: 16px; border: none; resize: none; font-family: 'Fira Code', monospace; font-size: 0.9rem; line-height: 1.7; outline: none; background: #fafafa; }
+  .divider { width: 2px; background: #d1d5db; }
+  #md-preview { flex: 1; padding: 16px 24px; overflow-y: auto; background: white; font-size: 0.95rem; line-height: 1.8; color: #1e293b; }
+  #md-preview h1 { font-size: 1.8rem; margin: 0.5em 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.3em; }
+  #md-preview h2 { font-size: 1.4rem; margin: 0.5em 0; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.2em; }
+  #md-preview h3 { font-size: 1.1rem; margin: 0.5em 0; }
+  #md-preview strong { font-weight: 700; }
+  #md-preview em { font-style: italic; color: #4b5563; }
+  #md-preview code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.85em; color: #e11d48; }
+  #md-preview blockquote { border-left: 4px solid #3b82f6; padding: 8px 16px; margin: 0.5em 0; background: #eff6ff; color: #1e40af; border-radius: 0 4px 4px 0; }
+  #md-preview ul { margin: 0.5em 0; padding-left: 1.5em; }
+  #md-preview li { margin: 0.3em 0; }
+  #md-preview hr { border: none; border-top: 2px solid #e5e7eb; margin: 1em 0; }
+  #md-preview a { color: #3b82f6; text-decoration: none; }
+  #md-preview a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="header">Markdown Viewer <span>Live Preview</span></div>
+  <div class="editor-container">
+    <div class="pane">
+      <div class="pane-header">Markdown</div>
+      <textarea id="md-editor" placeholder="Write your markdown here..."></textarea>
+    </div>
+    <div class="divider"></div>
+    <div class="pane">
+      <div class="pane-header">Preview</div>
+      <div id="md-preview"></div>
+    </div>
+  </div>
+</body>
+</html>

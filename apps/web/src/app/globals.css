@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: "Inter", "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8fafc;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+  }
+}
+
+@layer components {
+  /* Card base */
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-md hover:border-gray-300;
+  }
+
+  /* Badge variants */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+  .badge-success {
+    @apply badge bg-success-100 text-success-700;
+  }
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  .badge-danger {
+    @apply badge bg-danger-100 text-danger-700;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium
+           transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-400;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-gray-600 hover:bg-gray-100 focus:ring-gray-300;
+  }
+  .btn-danger {
+    @apply btn bg-danger-600 text-white hover:bg-danger-700 focus:ring-danger-500;
+  }
+  .btn-sm {
+    @apply text-sm px-3 py-1.5;
+  }
+  .btn-lg {
+    @apply text-lg px-6 py-3;
+  }
+
+  /* Score meter */
+  .score-meter {
+    @apply relative h-2 bg-gray-200 rounded-full overflow-hidden;
+  }
+  .score-meter-fill {
+    @apply absolute left-0 top-0 h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Editor panel layout */
+  .panel-grid {
+    @apply grid gap-0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  /* Resizable panel handle */
+  .resize-handle {
+    @apply bg-gray-300 hover:bg-primary-400 transition-colors cursor-col-resize;
+    width: 4px;
+  }
+
+  /* Code block in analysis */
+  .code-inline {
+    @apply font-mono text-sm bg-gray-100 text-danger-600 px-1.5 py-0.5 rounded;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg
+           pointer-events-none animate-fade-in;
+  }
+}
+
+@layer utilities {
+  /* Glass effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-500;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Monaco editor container fix */
+  .monaco-container {
+    @apply relative w-full h-full;
+  }
+  .monaco-container .overflow-guard {
+    border-radius: 0 !important;
+  }
+}
+
+/* Print styles for report page */
+@media print {
+  nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .card {
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

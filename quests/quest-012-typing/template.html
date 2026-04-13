@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f8f9fa; }
+  .container { max-width: 640px; width: 100%; padding: 2rem; }
+  h1 { font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: #333; }
+  .stats { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; color: #6b7280; font-size: 0.9rem; }
+  .stats span { font-weight: 700; color: #333; }
+  #sentence-display { background: white; padding: 20px; border-radius: 12px; font-size: 1.3rem; line-height: 2; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); letter-spacing: 0.5px; min-height: 80px; }
+  #sentence-display span.correct { color: #22c55e; }
+  #sentence-display span.incorrect { color: #ef4444; text-decoration: underline; }
+  #sentence-display span.current { border-bottom: 2px solid #3b82f6; }
+  #input-field { width: 100%; padding: 14px 18px; font-size: 1.1rem; border: 2px solid #e5e7eb; border-radius: 10px; outline: none; font-family: inherit; }
+  #input-field:focus { border-color: #3b82f6; }
+  #input-field:disabled { background: #f3f4f6; }
+  #result-panel { display: none; background: white; border-radius: 12px; padding: 24px; margin-top: 1rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  #result-panel h2 { font-size: 1.2rem; margin-bottom: 1rem; color: #333; }
+  .result-stats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 1rem; }
+  .result-stat { text-align: center; }
+  .result-stat .value { font-size: 2.5rem; font-weight: 800; color: #3b82f6; }
+  .result-stat .label { font-size: 0.8rem; color: #6b7280; }
+  #restart-btn { padding: 10px 28px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; margin-top: 1rem; }
+  #restart-btn:hover { background: #2563eb; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Test</h1>
+    <div class="stats">
+      Time: <span id="timer">0s</span> &nbsp; WPM: <span id="wpm">0</span> &nbsp; Accuracy: <span id="accuracy">100%</span>
+    </div>
+    <div id="sentence-display"></div>
+    <input type="text" id="input-field" placeholder="Start typing here..." autocomplete="off" autofocus>
+    <div id="result-panel">
+      <h2>Result</h2>
+      <div class="result-stats">
+        <div class="result-stat"><div class="value" id="final-wpm">0</div><div class="label">WPM</div></div>
+        <div class="result-stat"><div class="value" id="final-accuracy">0%</div><div class="label">Accuracy</div></div>
+      </div>
+      <button id="restart-btn">Try Again</button>
+    </div>
+  </div>
+</body>
+</html>

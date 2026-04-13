@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<clickhouse>
+    <!-- Development configuration for DevLens -->
+
+    <!-- Listen on all interfaces -->
+    <listen_host>0.0.0.0</listen_host>
+
+    <!-- HTTP port -->
+    <http_port>8123</http_port>
+
+    <!-- Native protocol port -->
+    <tcp_port>9000</tcp_port>
+
+    <!-- Memory configuration for development -->
+    <max_memory_usage>4G</max_memory_usage>
+
+    <!-- Query log settings -->
+    <query_log>
+        <database>system</database>
+        <table>query_log</table>
+        <partition_by>toYYYYMM(event_time)</partition_by>
+        <flush_interval_milliseconds>7500</flush_interval_milliseconds>
+    </query_log>
+
+    <!-- Allow insecure defaults for local development -->
+    <allow_introspection_functions>1</allow_introspection_functions>
+</clickhouse>

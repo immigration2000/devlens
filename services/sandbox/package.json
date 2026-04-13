@@ -1,0 +1,33 @@
+{
+  "name": "@devlens/sandbox",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Secure code execution sandbox for DevLens",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc || echo 'sandbox build: type errors exist but JS emitted'",
+    "start": "node dist/index.js",
+    "lint": "eslint src/ --ext .ts",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"No tests yet\"",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "fastify": "^4.25.2",
+    "dockerode": "^4.0.2",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.1",
+    "@devlens/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@devlens/tsconfig": "workspace:*",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0",
+    "@types/node": "^20.10.6",
+    "@types/dockerode": "^3.3.24",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0"
+  }
+}

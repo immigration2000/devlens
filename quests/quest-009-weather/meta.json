@@ -1,0 +1,25 @@
+{
+  "id": "quest-009-weather",
+  "title": "Weather App",
+  "titleKr": "날씨 앱",
+  "description": "도시 이름으로 날씨 정보를 조회하는 앱. (Mock API 사용)",
+  "difficulty": 4,
+  "timeEstimate": 60,
+  "tags": ["API", "async/await", "DOM", "에러처리"],
+  "learningOutcomes": [
+    "fetch API와 Promise 활용",
+    "async/await 문법",
+    "에러 처리와 검증",
+    "상태 관리 (로딩, 에러, 데이터)",
+    "localStorage 활용"
+  ],
+  "requirements": [
+    "도시 입력 필드 + 검색 버튼",
+    "Mock fetch로 날씨 데이터 가져오기",
+    "온도, 날씨 상태, 습도 표시",
+    "로딩 상태 표시",
+    "존재하지 않는 도시 에러 처리",
+    "최근 검색 기록 (최대 5개)"
+  ],
+  "testCases": 5
+}

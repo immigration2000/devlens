@@ -1,0 +1,23 @@
+{
+  "id": "quest-008-stopwatch",
+  "title": "Stopwatch",
+  "titleKr": "스톱워치",
+  "description": "시작/정지/랩타임/리셋 기능이 있는 스톱워치 만들기.",
+  "difficulty": 2,
+  "timeEstimate": 30,
+  "tags": ["DOM", "타이머", "setInterval"],
+  "learningOutcomes": [
+    "setInterval과 setTimeout 활용",
+    "상태 기반 UI 업데이트",
+    "시간 계산 및 포맷팅",
+    "버튼 상태 관리"
+  ],
+  "requirements": [
+    "MM:SS.ms 형식 디스플레이",
+    "Start/Stop 토글 버튼",
+    "Lap 버튼 (현재 시간 기록)",
+    "Reset 버튼",
+    "랩타임 목록 표시"
+  ],
+  "testCases": 5
+}

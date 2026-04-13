@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; padding: 2rem; }
+  h1 { text-align: center; font-size: 1.5rem; color: #333; margin-bottom: 1.5rem; }
+  #gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 700px; margin: 0 auto; }
+  .thumbnail { aspect-ratio: 1; border-radius: 10px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .thumbnail:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; flex-direction: column; }
+  #lightbox-image { width: 70vw; height: 60vh; border-radius: 12px; transition: background 0.4s; }
+  #lightbox-counter { color: white; margin-top: 16px; font-size: 0.9rem; }
+  .lightbox-controls { position: absolute; bottom: 2rem; display: flex; gap: 12px; }
+  .lightbox-controls button { padding: 8px 20px; background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer; font-size: 0.9rem; backdrop-filter: blur(4px); }
+  .lightbox-controls button:hover { background: rgba(255,255,255,0.25); }
+  #close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; }
+  .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; font-size: 2rem; padding: 10px 16px; cursor: pointer; border-radius: 8px; }
+  .nav-btn:hover { background: rgba(255,255,255,0.2); }
+  #prev-btn { left: 1.5rem; }
+  #next-btn { right: 1.5rem; }
+</style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <div id="gallery"></div>
+  <div id="lightbox">
+    <button id="close-btn">&times;</button>
+    <button id="prev-btn" class="nav-btn">&lsaquo;</button>
+    <div id="lightbox-image"></div>
+    <div id="lightbox-counter">1 / 10</div>
+    <button id="next-btn" class="nav-btn">&rsaquo;</button>
+    <div class="lightbox-controls">
+      <button id="play-btn">Slideshow</button>
+    </div>
+  </div>
+</body>
+</html>

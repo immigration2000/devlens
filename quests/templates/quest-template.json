@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "DevLens 웹 게임 과제 메타데이터 스키마",
+  "type": "object",
+  "required": ["slug", "title", "description", "difficulty", "time_limit_min", "tags", "test_cases"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "URL-safe 과제 식별자"
+    },
+    "title": {
+      "type": "string",
+      "description": "과제 제목"
+    },
+    "description": {
+      "type": "string",
+      "description": "과제 설명 (마크다운 지원)"
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "난이도 (1: 입문, 5: 고급)"
+    },
+    "time_limit_min": {
+      "type": "integer",
+      "minimum": 10,
+      "description": "제한 시간 (분)"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "분류 태그"
+    },
+    "test_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" },
+          "type": { "type": "string", "enum": ["unit", "visual", "integration"] }
+        }
+      }
+    }
+  }
+}

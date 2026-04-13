@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #1a1a2e; transition: background 0.5s; }
+  .container { text-align: center; color: white; }
+  h1 { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: #aaa; }
+  #mode-display { font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 600; color: #e74c3c; }
+  #timer-circle { width: 260px; height: 260px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 2rem; position: relative; transition: border-color 0.5s; }
+  #timer-circle.work { border-color: #e74c3c; }
+  #timer-circle.break { border-color: #2ecc71; }
+  #timer-display { font-size: 4rem; font-weight: 200; font-family: 'Fira Code', monospace; letter-spacing: 4px; }
+  .btn-group { display: flex; gap: 12px; justify-content: center; margin-bottom: 2rem; }
+  button { padding: 12px 32px; border: 2px solid rgba(255,255,255,0.2); background: transparent; color: white; border-radius: 30px; font-size: 0.95rem; cursor: pointer; font-weight: 600; letter-spacing: 1px; transition: all 0.2s; }
+  button:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+  #start-pause-btn { background: #e74c3c; border-color: #e74c3c; min-width: 120px; }
+  #start-pause-btn:hover { background: #c0392b; }
+  .stats { color: #666; font-size: 0.85rem; }
+  .stats span { color: white; font-weight: 700; font-size: 1.2rem; }
+  body.break-mode { background: #0d3b2e; }
+  body.break-mode #mode-display { color: #2ecc71; }
+  body.break-mode #start-pause-btn { background: #2ecc71; border-color: #2ecc71; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pomodoro</h1>
+    <div id="mode-display">Work Time</div>
+    <div id="timer-circle" class="work">
+      <div id="timer-display">25:00</div>
+    </div>
+    <div class="btn-group">
+      <button id="start-pause-btn">Start</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    <div class="stats">Completed: <span id="pomodoro-count">0</span></div>
+  </div>
+</body>
+</html>

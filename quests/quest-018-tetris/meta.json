@@ -1,0 +1,15 @@
+{
+  "slug": "tetris-game",
+  "title": "테트리스 게임 만들기",
+  "description": "Canvas를 사용하여 테트리스 게임을 만드세요.\n\n## 요구사항\n- 10x20 그리드 보드\n- 7종 테트로미노 (I, O, T, S, Z, J, L) 랜덤 생성\n- 화살표 키: 좌/우 이동, 아래로 빠르게 떨어뜨리기\n- 위쪽 화살표: 블록 회전\n- 한 줄이 완성되면 제거 + 위 블록 아래로 이동\n- 점수: 1줄=100, 2줄=300, 3줄=500, 4줄=800\n- 레벨 시스템 (10줄마다 레벨업, 속도 증가)\n- 다음 블록 미리보기\n- 게임 오버 감지 (새 블록 배치 불가)",
+  "difficulty": 4,
+  "time_limit_min": 90,
+  "tags": ["Canvas", "게임루프", "배열", "알고리즘"],
+  "test_cases": [
+    { "id": "tc-001", "description": "게임 보드가 10x20으로 초기화되는지 확인", "type": "unit" },
+    { "id": "tc-002", "description": "블록이 화살표 키로 이동하는지 확인", "type": "unit" },
+    { "id": "tc-003", "description": "블록 회전이 올바르게 동작하는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "완성된 줄이 제거되는지 확인", "type": "unit" },
+    { "id": "tc-005", "description": "점수 계산이 올바른지 확인", "type": "unit" }
+  ]
+}

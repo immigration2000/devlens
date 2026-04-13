@@ -1,0 +1,26 @@
+{
+  "id": "quest-010-sorting",
+  "title": "Sorting Visualizer",
+  "titleKr": "정렬 시각화",
+  "description": "버블소트를 시각적으로 보여주는 애니메이션 만들기.",
+  "difficulty": 4,
+  "timeEstimate": 90,
+  "tags": ["Canvas", "알고리즘", "애니메이션", "async"],
+  "learningOutcomes": [
+    "Canvas를 이용한 시각화",
+    "버블 정렬 알고리즘 이해",
+    "async/await를 이용한 애니메이션 제어",
+    "실시간 UI 업데이트",
+    "성능 최적화"
+  ],
+  "requirements": [
+    "랜덤 배열 생성 (막대 그래프로 표시)",
+    "버블소트 실행 버튼",
+    "비교 중인 요소 하이라이트 (빨간색)",
+    "교환 시 애니메이션",
+    "정렬 완료 시 전체 녹색",
+    "속도 조절 슬라이더",
+    "새 배열 생성 버튼"
+  ],
+  "testCases": 6
+}

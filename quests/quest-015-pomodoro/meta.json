@@ -1,0 +1,14 @@
+{
+  "slug": "pomodoro-timer",
+  "title": "포모도로 타이머 만들기",
+  "description": "HTML/CSS/JavaScript를 사용하여 포모도로 기법 타이머를 만드세요.\n\n## 요구사항\n- 작업 시간 25분, 휴식 시간 5분 (기본값)\n- 큰 원형 타이머 표시 (MM:SS 형식)\n- 시작/일시정지 토글 버튼\n- 리셋 버튼\n- 작업/휴식 모드 자동 전환\n- 모드에 따라 배경색 변경 (작업: 빨강 계열, 휴식: 초록 계열)\n- 완료된 포모도로 횟수 표시\n- 타이머 완료 시 알림음 효과 (텍스트 알림으로 대체 가능)",
+  "difficulty": 1,
+  "time_limit_min": 30,
+  "tags": ["DOM", "타이머", "setInterval", "기초"],
+  "test_cases": [
+    { "id": "tc-001", "description": "초기 타이머가 25:00으로 표시되는지 확인", "type": "unit" },
+    { "id": "tc-002", "description": "시작 버튼 클릭 시 타이머가 카운트다운하는지 확인", "type": "unit" },
+    { "id": "tc-003", "description": "작업 완료 후 휴식 모드로 전환되는지 확인", "type": "unit" },
+    { "id": "tc-004", "description": "리셋 버튼이 타이머를 초기화하는지 확인", "type": "unit" }
+  ]
+}

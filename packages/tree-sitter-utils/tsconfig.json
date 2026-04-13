@@ -1,0 +1,13 @@
+{
+  "extends": "@devlens/tsconfig/node.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "isolatedModules": false,
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true,
+    "strictNullChecks": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src/__tests__"]
+}

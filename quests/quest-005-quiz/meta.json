@@ -1,0 +1,35 @@
+{
+  "slug": "quiz-app",
+  "title": "퀴즈 앱 만들기",
+  "description": "HTML/CSS/JavaScript를 사용하여 타이머가 있는 퀴즈 앱을 만드세요.\n\n## 요구사항\n- 객관식 문제 (4개 선택지)\n- 각 문제마다 30초 제한 시간\n- 타이머 표시 (초 단위)\n- 정답/오답 표시\n- 문제 진행 상황 표시 (예: 2/10)\n- 최종 점수 표시 (맞은 문제 수)\n- 다시 풀기 기능\n- 타이머 완료 시 다음 문제로 자동 진행",
+  "difficulty": 2,
+  "time_limit_min": 45,
+  "tags": ["DOM", "상태관리", "타이머"],
+  "test_cases": [
+    {
+      "id": "tc-001",
+      "description": "첫 번째 문제가 정확하게 표시되는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-002",
+      "description": "정답을 선택하면 점수가 증가하는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-003",
+      "description": "오답을 선택하면 점수가 증가하지 않는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-004",
+      "description": "타이머가 30초에서 시작하고 감소하는지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-005",
+      "description": "모든 문제 완료 후 최종 점수가 표시되는지 확인",
+      "type": "unit"
+    }
+  ]
+}

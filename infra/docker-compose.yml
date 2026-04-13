@@ -1,0 +1,130 @@
+version: '3.8'
+
+# NOTE: The devlens-runner image is built dynamically by the sandbox service
+# Build command: docker build -f services/sandbox/docker/Dockerfile.runner -t devlens-runner:latest services/sandbox/docker/
+# This image is used to execute user code in isolated containers with resource limits
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+      - zookeeper-logs:/var/lib/zookeeper/log
+    networks:
+      - devlens-net
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    container_name: devlens-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_COMPRESSION_TYPE: lz4
+      KAFKA_NUM_PARTITIONS: 6
+      KAFKA_LOG_RETENTION_DAYS: 7
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+      - ./kafka/init-topics.sh:/scripts/init-topics.sh
+    networks:
+      - devlens-net
+    healthcheck:
+      test: ["CMD", "kafka-broker-api-versions.sh", "--bootstrap-server", "localhost:29092"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.3
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    environment:
+      CLICKHOUSE_DB: devlens
+      CLICKHOUSE_USER: devlens
+      CLICKHOUSE_PASSWORD: devlens_local
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+      - ./clickhouse/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./clickhouse/config.xml:/etc/clickhouse-server/config.d/dev-config.xml
+    networks:
+      - devlens-net
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: devlens
+      POSTGRES_PASSWORD: devlens_local
+      POSTGRES_DB: devlens
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - devlens-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devlens"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    networks:
+      - devlens-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: devlens
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    depends_on:
+      - kafka
+      - zookeeper
+    networks:
+      - devlens-net
+
+volumes:
+  zookeeper-data:
+  zookeeper-logs:
+  kafka-data:
+  clickhouse-data:
+  postgres-data:
+  redis-data:
+
+networks:
+  devlens-net:
+    driver: bridge

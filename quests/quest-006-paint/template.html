@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 1rem; background: #f8f9fa; }
+  h1 { font-size: 1.3rem; margin-bottom: 0.75rem; color: #333; }
+  .toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 8px 12px; background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .toolbar label { font-size: 0.85rem; color: #555; }
+  #colorPicker { width: 36px; height: 30px; border: none; cursor: pointer; border-radius: 4px; }
+  #brushSize { width: 100px; }
+  #brushSizeLabel { font-size: 0.8rem; color: #888; min-width: 30px; }
+  button { padding: 6px 14px; border: 1px solid #d1d5db; border-radius: 6px; background: white; cursor: pointer; font-size: 0.85rem; }
+  button:hover { background: #f3f4f6; }
+  #clearBtn { color: #ef4444; border-color: #fca5a5; }
+  #undoBtn { color: #3b82f6; border-color: #93c5fd; }
+  #canvas { border: 2px solid #e5e7eb; border-radius: 4px; background: white; cursor: crosshair; }
+</style>
+</head>
+<body>
+  <h1>그리기 앱</h1>
+  <div class="toolbar">
+    <label>색상</label><input type="color" id="colorPicker" value="#000000">
+    <label>크기</label><input type="range" id="brushSize" min="5" max="50" value="10"><span id="brushSizeLabel">10px</span>
+    <button id="undoBtn">Undo</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+  <canvas id="canvas" width="500" height="400"></canvas>
+</body>
+</html>

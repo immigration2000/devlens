@@ -1,0 +1,35 @@
+{
+  "slug": "counter-app",
+  "title": "카운터 앱 만들기",
+  "description": "HTML/CSS/JavaScript를 사용하여 증가, 감소, 리셋 기능이 있는 카운터 앱을 만드세요.\n\n## 요구사항\n- 화면에 현재 숫자를 표시\n- '+' 버튼: 숫자 1 증가\n- '-' 버튼: 숫자 1 감소\n- 'Reset' 버튼: 숫자를 0으로 초기화\n- 숫자가 음수일 때 빨간색으로 표시",
+  "difficulty": 1,
+  "time_limit_min": 30,
+  "tags": ["DOM", "이벤트", "기초"],
+  "test_cases": [
+    {
+      "id": "tc-001",
+      "description": "초기 카운터 값이 0인지 확인",
+      "type": "unit"
+    },
+    {
+      "id": "tc-002",
+      "description": "'+' 버튼 클릭 시 1 증가",
+      "type": "unit"
+    },
+    {
+      "id": "tc-003",
+      "description": "'-' 버튼 클릭 시 1 감소",
+      "type": "unit"
+    },
+    {
+      "id": "tc-004",
+      "description": "Reset 버튼 클릭 시 0으로 초기화",
+      "type": "unit"
+    },
+    {
+      "id": "tc-005",
+      "description": "음수일 때 숫자가 빨간색으로 표시되는지 확인",
+      "type": "visual"
+    }
+  ]
+}
